@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Service</title>
+    <style>
+      body {
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 0 16px;
+        font-family: Arial, sans-serif;
+      }
+
+      input,
+      textarea,
+      button {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 8px;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      article {
+        margin-top: 16px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Community Service</h1>
+
+    <input id="title" placeholder="제목" />
+    <textarea id="content" placeholder="내용"></textarea>
+    <button onclick="createPost()">글쓰기</button>
+
+    <section id="posts"></section>
+
+    <script>
+      const API_URL = "http://127.0.0.1:8000";
+
+      async function loadPosts() {
+        const response = await fetch(`${API_URL}/posts/`);
+        const posts = await response.json();
+        const postsSection = document.querySelector("#posts");
+
+        postsSection.innerHTML = posts
+          .map(
+            (post) => `
+              <article>
+                <h2>${post.title}</h2>
+                <p>${post.content}</p>
+              </article>
+            `
+          )
+          .join("");
+      }
+
+      async function createPost() {
+        const title = document.querySelector("#title").value;
+        const content = document.querySelector("#content").value;
+
+        await fetch(`${API_URL}/posts/`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, content }),
+        });
+
+        document.querySelector("#title").value = "";
+        document.querySelector("#content").value = "";
+        loadPosts();
+      }
+
+      loadPosts();
+    </script>
+  </body>
+</html>
