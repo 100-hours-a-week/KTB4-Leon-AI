@@ -1,0 +1,5 @@
+__pycache__/
+data/
+artifacts/image_models/
+artifacts/image_smoke/
+artifacts/vgg_smoke/
