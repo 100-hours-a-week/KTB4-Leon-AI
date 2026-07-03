@@ -1,0 +1,259 @@
+{
+  "dataset": "kakao-bootcamp-week7-rag",
+  "dataset_id": "89687ed8-fc89-455c-afa4-54f2e13ac07d",
+  "cases": 12,
+  "source_results": "/Users/samrobert/Documents/GitHub/KakaoBootCamp/weeks/week-07/weekly-challenge/evaluation/model_comparison_results.json",
+  "source_generated_at": "2026-06-30T15:38:11+09:00",
+  "cached_outputs": true,
+  "experiments": {
+    "자기 모델": {
+      "model_id": "character-transformer",
+      "experiment": "week7-model-comparison-self-autocomplete-2cf8bc0b",
+      "project_url": "https://apac.smith.langchain.com/o/42d0c218-3e71-4700-bdd0-d9c6bb51a5b4/projects/p/ccb51944-e73b-45ad-a7ea-fbea37c7e033",
+      "feedback_stats": {
+        "actual_latency_ms": {
+          "n": 12,
+          "avg": 49.58583333333333,
+          "median": 50.33,
+          "stdev": 19.72632566662012,
+          "min": 22.1,
+          "max": 97.14,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "answer_token_f1": {
+          "n": 12,
+          "avg": 0,
+          "median": 0,
+          "stdev": 0,
+          "min": 0,
+          "max": 0,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "citation_present": {
+          "n": 12,
+          "avg": 0,
+          "median": 0,
+          "stdev": 0,
+          "min": 0,
+          "max": 0,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "groundedness": {
+          "n": 12,
+          "avg": 0.13193333333333332,
+          "median": 0,
+          "stdev": 0.15758032519603737,
+          "min": 0,
+          "max": 0.3333,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "source_hit": {
+          "n": 12,
+          "avg": 1,
+          "median": 1,
+          "stdev": 0,
+          "min": 1,
+          "max": 1,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        }
+      },
+      "run_stats": {
+        "run_count": 12,
+        "latency_p50": null,
+        "latency_p99": "0:00:00.021580",
+        "total_tokens": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "last_run_start_time": "2026-06-30 08:20:12.895747+00:00",
+        "run_facets": null,
+        "total_cost": "0",
+        "prompt_cost": "0",
+        "completion_cost": "0",
+        "first_token_p50": null,
+        "first_token_p99": null,
+        "error_rate": 0.0
+      }
+    },
+    "Gemma 4 E2B": {
+      "model_id": "gemma4:e2b",
+      "experiment": "week7-model-comparison-gemma4-e2b-26a64a79",
+      "project_url": "https://apac.smith.langchain.com/o/42d0c218-3e71-4700-bdd0-d9c6bb51a5b4/projects/p/7ac27d43-62ae-464d-97c1-5098e64e3f92",
+      "feedback_stats": {
+        "actual_latency_ms": {
+          "n": 12,
+          "avg": 1941.8716666666667,
+          "median": 1111.79,
+          "stdev": 2648.106074247006,
+          "min": 699.22,
+          "max": 10594.53,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "answer_token_f1": {
+          "n": 12,
+          "avg": 0.45848333333333335,
+          "median": 0.44584999999999997,
+          "stdev": 0.2234953796440148,
+          "min": 0.075,
+          "max": 0.8148,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "citation_present": {
+          "n": 12,
+          "avg": 1,
+          "median": 1,
+          "stdev": 0,
+          "min": 1,
+          "max": 1,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "groundedness": {
+          "n": 12,
+          "avg": 0.7909416666666668,
+          "median": 0.875,
+          "stdev": 0.1499461262050109,
+          "min": 0.5,
+          "max": 0.9375,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "source_hit": {
+          "n": 12,
+          "avg": 1,
+          "median": 1,
+          "stdev": 0,
+          "min": 1,
+          "max": 1,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        }
+      },
+      "run_stats": {
+        "run_count": 12,
+        "latency_p50": null,
+        "latency_p99": "0:00:00.002000",
+        "total_tokens": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "last_run_start_time": "2026-06-30 08:20:18.699439+00:00",
+        "run_facets": null,
+        "total_cost": "0",
+        "prompt_cost": "0",
+        "completion_cost": "0",
+        "first_token_p50": null,
+        "first_token_p99": null,
+        "error_rate": 0.0
+      }
+    },
+    "Gemini 2.5 Flash": {
+      "model_id": "gemini-2.5-flash",
+      "experiment": "week7-model-comparison-gemini-2-5-flash-0bed42bb",
+      "project_url": "https://apac.smith.langchain.com/o/42d0c218-3e71-4700-bdd0-d9c6bb51a5b4/projects/p/b7807124-83e6-4d2c-bacd-bbc942882787",
+      "feedback_stats": {
+        "actual_latency_ms": {
+          "n": 12,
+          "avg": 2031.5766666666666,
+          "median": 1949.18,
+          "stdev": 361.57606627866994,
+          "min": 1502.65,
+          "max": 2674.6,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "answer_token_f1": {
+          "n": 12,
+          "avg": 0.38431666666666664,
+          "median": 0.3529,
+          "stdev": 0.19074645839147017,
+          "min": 0.0714,
+          "max": 0.7407,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "citation_present": {
+          "n": 12,
+          "avg": 1,
+          "median": 1,
+          "stdev": 0,
+          "min": 1,
+          "max": 1,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "groundedness": {
+          "n": 12,
+          "avg": 0.69175,
+          "median": 0.67425,
+          "stdev": 0.12789913669242237,
+          "min": 0.5,
+          "max": 0.8929,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        },
+        "source_hit": {
+          "n": 12,
+          "avg": 1,
+          "median": 1,
+          "stdev": 0,
+          "min": 1,
+          "max": 1,
+          "errors": 0,
+          "values": {},
+          "type": "primary",
+          "contains_thread_feedback": false
+        }
+      },
+      "run_stats": {
+        "run_count": 12,
+        "latency_p50": null,
+        "latency_p99": "0:00:00.000890",
+        "total_tokens": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "last_run_start_time": "2026-06-30 08:20:25.043144+00:00",
+        "run_facets": null,
+        "total_cost": "0",
+        "prompt_cost": "0",
+        "completion_cost": "0",
+        "first_token_p50": null,
+        "first_token_p99": null,
+        "error_rate": 0.0
+      }
+    }
+  }
+}

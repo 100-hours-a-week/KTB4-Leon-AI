@@ -1,0 +1,73 @@
+{
+  "provider": "offline",
+  "cases": 4,
+  "summary": {
+    "retrieval_hit": 1.0,
+    "reciprocal_rank": 1.0,
+    "answer_token_f1": 0.2465,
+    "groundedness": 1.0,
+    "latency_ms": 0.9475
+  },
+  "rows": [
+    {
+      "question": "RAG 파이프라인은 어떤 단계로 동작하나요?",
+      "answer": "d '{\"question\":\"RAG 파이프라인은 어떤 단계로 구성되나요?\",\"top_k\":4}' [출처 2]",
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "answer_token_f1": 0.0,
+      "groundedness": 1.0,
+      "latency_ms": 1.42,
+      "retrieved_sources": [
+        "README.md",
+        "README.md",
+        "README.md",
+        "README.md"
+      ]
+    },
+    {
+      "question": "이 프로젝트는 검색에 어떤 방식을 사용하나요?",
+      "answer": "이 프로젝트는 Markdown, TXT, JSON, CSV 문서를 읽고 겹침이 있는 문자 단위 청크로 나눈다. [출처 2]",
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "answer_token_f1": 0.08,
+      "groundedness": 1.0,
+      "latency_ms": 0.84,
+      "retrieved_sources": [
+        "README.md",
+        "README.md",
+        "README.md",
+        "README.md"
+      ]
+    },
+    {
+      "question": "문서를 다시 인덱싱하는 API 경로는 무엇인가요?",
+      "answer": "`POST /api/documents/reindex`: 검색 문서를 다시 읽고 인덱스 교체 [출처 1]",
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "answer_token_f1": 0.4444444444444444,
+      "groundedness": 1.0,
+      "latency_ms": 0.82,
+      "retrieved_sources": [
+        "README.md",
+        "README.md",
+        "README.md",
+        "README.md"
+      ]
+    },
+    {
+      "question": "Gemini API 키는 어디에 설정하나요?",
+      "answer": "export GEMINI_API_KEY=\"your-gemini-key\" [출처 1]",
+      "retrieval_hit": true,
+      "reciprocal_rank": 1.0,
+      "answer_token_f1": 0.4615384615384615,
+      "groundedness": 1.0,
+      "latency_ms": 0.71,
+      "retrieved_sources": [
+        "README.md",
+        "README.md",
+        "README.md",
+        "README.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "question": "이 프로젝트가 제공하는 두 가지 기능은 무엇인가요?",
+    "answer": "한국어 다음 단어 자동완성과 문서 검색 기반 RAG 질의응답을 제공한다.",
+    "expected_source": "chatbot_guide.md",
+    "category": "기능"
+  },
+  {
+    "question": "다음 단어를 예측하는 API 경로는 무엇인가요?",
+    "answer": "POST /api/next-word API를 사용한다.",
+    "expected_source": "chatbot_guide.md",
+    "category": "API"
+  },
+  {
+    "question": "문장을 자동으로 이어 쓰는 API 경로는 무엇인가요?",
+    "answer": "POST /api/generate API를 사용한다.",
+    "expected_source": "chatbot_guide.md",
+    "category": "API"
+  },
+  {
+    "question": "문서 기반 질문에 사용하는 API 경로는 무엇인가요?",
+    "answer": "POST /api/query API를 사용한다.",
+    "expected_source": "chatbot_guide.md",
+    "category": "API"
+  },
+  {
+    "question": "지식 문서를 추가한 뒤 어떻게 다시 인덱싱하나요?",
+    "answer": "knowledge 디렉터리에 Markdown 또는 텍스트 파일을 넣고 POST /api/documents/reindex를 호출한다.",
+    "expected_source": "rag_faq.md",
+    "category": "운영"
+  },
+  {
+    "question": "RAG 검색 근거는 어디에서 확인할 수 있나요?",
+    "answer": "API 응답의 sources 배열과 웹 화면의 검색 근거 영역에서 확인할 수 있다.",
+    "expected_source": "rag_faq.md",
+    "category": "RAG"
+  },
+  {
+    "question": "RAG 검색기는 어떤 방식으로 관련 문서를 찾나요?",
+    "answer": "문서를 나눈 뒤 Gemini Embedding 벡터를 만들고 InMemoryVectorStore에서 질문과 유사한 청크를 찾는다.",
+    "expected_source": "chatbot_guide.md",
+    "category": "RAG"
+  },
+  {
+    "question": "자기 모델은 어떤 작업을 수행하도록 만든 모델인가요?",
+    "answer": "작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델이다.",
+    "expected_source": "model_card.md",
+    "category": "자기 모델"
+  },
+  {
+    "question": "자기 모델의 Transformer 구조는 어떻게 구성되어 있나요?",
+    "answer": "문자 Embedding, causal mask를 적용한 3층 TransformerEncoder, 선형 출력층으로 구성되며 embedding dimension은 128이고 attention head는 4개다.",
+    "expected_source": "model_card.md",
+    "category": "자기 모델"
+  },
+  {
+    "question": "자기 모델은 몇 개의 문장과 토큰으로 학습했나요?",
+    "answer": "자동완성 문장 2,698개와 토큰 74,037개로 학습했다.",
+    "expected_source": "model_card.md",
+    "category": "학습"
+  },
+  {
+    "question": "자기 모델은 어떤 방식으로 다음 문자를 학습했나요?",
+    "answer": "현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화했다.",
+    "expected_source": "model_card.md",
+    "category": "학습"
+  },
+  {
+    "question": "자기 모델의 현재 한계와 앞으로의 개선 방향은 무엇인가요?",
+    "answer": "작은 말뭉치와 짧은 학습으로 긴 문맥과 질의응답이 약하므로 데이터를 확대하고 subword tokenizer와 추가 학습을 적용해야 한다.",
+    "expected_source": "model_card.md",
+    "category": "한계"
+  }
+]

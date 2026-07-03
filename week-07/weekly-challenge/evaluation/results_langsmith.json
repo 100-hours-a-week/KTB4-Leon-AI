@@ -1,0 +1,46 @@
+{
+  "dataset": "kakao-bootcamp-week7-rag",
+  "experiment": "week7-langchain-rag-6b630328",
+  "feedback_stats": {
+    "answer_token_f1": {
+      "n": 12,
+      "avg": 0.2922166666666667,
+      "median": 0.35455000000000003,
+      "stdev": 0.12283088532160345,
+      "min": 0.0594,
+      "max": 0.4706,
+      "errors": 0,
+      "values": {},
+      "type": "primary",
+      "contains_thread_feedback": false
+    },
+    "source_hit": {
+      "n": 12,
+      "avg": 1,
+      "median": 1,
+      "stdev": 0,
+      "min": 1,
+      "max": 1,
+      "errors": 0,
+      "values": {},
+      "type": "primary",
+      "contains_thread_feedback": false
+    }
+  },
+  "run_stats": {
+    "run_count": 12,
+    "latency_p50": "0:00:02.816500",
+    "latency_p99": "0:00:05.298670",
+    "total_tokens": 24038,
+    "prompt_tokens": 21906,
+    "completion_tokens": 2132,
+    "last_run_start_time": "2026-06-30 08:19:56.143074+00:00",
+    "run_facets": null,
+    "total_cost": "0.032566",
+    "prompt_cost": "0.021906",
+    "completion_cost": "0.01066",
+    "first_token_p50": null,
+    "first_token_p99": null,
+    "error_rate": 0.0
+  }
+}

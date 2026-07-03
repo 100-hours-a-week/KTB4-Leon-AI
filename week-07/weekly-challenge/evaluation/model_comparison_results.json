@@ -1,0 +1,791 @@
+{
+  "generated_at": "2026-06-30T15:38:11+09:00",
+  "cases": 12,
+  "comparison_scope": "세 모델에 동일한 검색 문맥과 질문을 입력했다. 자기 모델은 자동완성 모델이므로 질의응답 점수는 용도 부적합을 확인하는 진단값이다.",
+  "self_model_training": {
+    "architecture": "character_transformer",
+    "data_type": "plain_autocomplete_corpus",
+    "texts": 2698,
+    "tokens": 74037,
+    "vocabulary_size": 354,
+    "epochs": 1,
+    "steps": 800,
+    "best_validation_loss": 3.1072571635246278
+  },
+  "summary": {
+    "Gemini 2.5 Flash": {
+      "cases": 12,
+      "successful_cases": 12,
+      "answer_token_f1": 0.3843,
+      "groundedness": 0.6917,
+      "citation_rate": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "latency_ms": 2031.58,
+      "latency_median_ms": 1949.18
+    },
+    "Gemma 4 E2B": {
+      "cases": 12,
+      "successful_cases": 12,
+      "answer_token_f1": 0.4585,
+      "groundedness": 0.7909,
+      "citation_rate": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "latency_ms": 1941.87,
+      "latency_median_ms": 1111.79
+    },
+    "자기 모델": {
+      "cases": 12,
+      "successful_cases": 12,
+      "answer_token_f1": 0.0,
+      "groundedness": 0.1319,
+      "citation_rate": 0.0,
+      "retrieval_hit_rate": 1.0,
+      "latency_ms": 49.59,
+      "latency_median_ms": 50.33
+    }
+  },
+  "rows": [
+    {
+      "case": 1,
+      "category": "기능",
+      "question": "이 프로젝트가 제공하는 두 가지 기능은 무엇인가요?",
+      "reference": "한국어 다음 단어 자동완성과 문서 검색 기반 RAG 질의응답을 제공한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "chatbot_guide.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "분석 시 관리와 노트북에서 관리입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 62.99,
+      "error": null
+    },
+    {
+      "case": 1,
+      "category": "기능",
+      "question": "이 프로젝트가 제공하는 두 가지 기능은 무엇인가요?",
+      "reference": "한국어 다음 단어 자동완성과 문서 검색 기반 RAG 질의응답을 제공한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "chatbot_guide.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "이 프로젝트는 문자 단위 Transformer와 다음 단어 인덱스를 제공합니다. [출처 1]",
+      "answer_token_f1": 0.1905,
+      "groundedness": 0.7273,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 10594.53,
+      "error": null
+    },
+    {
+      "case": 1,
+      "category": "기능",
+      "question": "이 프로젝트가 제공하는 두 가지 기능은 무엇인가요?",
+      "reference": "한국어 다음 단어 자동완성과 문서 검색 기반 RAG 질의응답을 제공한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "chatbot_guide.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "이 프로젝트는 문자 단위 Transformer와 다음 단어 인덱스를 사용한 다음 단어 후보 예측 및 문장 이어쓰기 기능과 LangChain RAG 앱을 사용한 문서 검색 및 질문 답변 기능을 제공합니다. [출처 1]",
+      "answer_token_f1": 0.2778,
+      "groundedness": 0.5385,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2009.16,
+      "error": null
+    },
+    {
+      "case": 2,
+      "category": "API",
+      "question": "다음 단어를 예측하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/next-word API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "분석 있습니다.서 차분하게 진행 정리합니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 97.14,
+      "error": null
+    },
+    {
+      "case": 2,
+      "category": "API",
+      "question": "다음 단어를 예측하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/next-word API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "다음 단어를 예측하는 API 경로는 `POST /api/next-word`입니다.[출처 1]",
+      "answer_token_f1": 0.4706,
+      "groundedness": 0.5455,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1233.38,
+      "error": null
+    },
+    {
+      "case": 2,
+      "category": "API",
+      "question": "다음 단어를 예측하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/next-word API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "다음 단어 예측 API 경로는 `POST /api/next-word`입니다. [출처 1, 출처 2]",
+      "answer_token_f1": 0.4444,
+      "groundedness": 0.6667,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2305.03,
+      "error": null
+    },
+    {
+      "case": 3,
+      "category": "API",
+      "question": "문장을 자동으로 이어 쓰는 API 경로는 무엇인가요?",
+      "reference": "POST /api/generate API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "있습 있습니다.서 수정합니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 52.2,
+      "error": null
+    },
+    {
+      "case": 3,
+      "category": "API",
+      "question": "문장을 자동으로 이어 쓰는 API 경로는 무엇인가요?",
+      "reference": "POST /api/generate API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "자동 이어쓰기는 `POST /api/generate` API를 사용한다.[출처 1] [출처 2]",
+      "answer_token_f1": 0.6667,
+      "groundedness": 0.9,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 699.22,
+      "error": null
+    },
+    {
+      "case": 3,
+      "category": "API",
+      "question": "문장을 자동으로 이어 쓰는 API 경로는 무엇인가요?",
+      "reference": "POST /api/generate API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "문장을 자동으로 이어 쓰는 API 경로는 `POST /api/generate`입니다. [출처 1, 출처 2]",
+      "answer_token_f1": 0.3529,
+      "groundedness": 0.5833,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2022.5,
+      "error": null
+    },
+    {
+      "case": 4,
+      "category": "API",
+      "question": "문서 기반 질문에 사용하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/query API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "분석 있습 먼저 노트북을 관리합니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 48.46,
+      "error": null
+    },
+    {
+      "case": 4,
+      "category": "API",
+      "question": "문서 기반 질문에 사용하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/query API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "문서 기반 질문에는 `POST /api/query` API를 사용합니다.[출처 2]",
+      "answer_token_f1": 0.5333,
+      "groundedness": 0.6,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1220.49,
+      "error": null
+    },
+    {
+      "case": 4,
+      "category": "API",
+      "question": "문서 기반 질문에 사용하는 API 경로는 무엇인가요?",
+      "reference": "POST /api/query API를 사용한다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "문서 기반 질문에는 `POST /api/query` API를 사용합니다. [출처 2]",
+      "answer_token_f1": 0.5333,
+      "groundedness": 0.6,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1654.25,
+      "error": null
+    },
+    {
+      "case": 5,
+      "category": "운영",
+      "question": "지식 문서를 추가한 뒤 어떻게 다시 인덱싱하나요?",
+      "reference": "knowledge 디렉터리에 Markdown 또는 텍스트 파일을 넣고 POST /api/documents/reindex를 호출한다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "탐색입니다.는 진행합니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 39.66,
+      "error": null
+    },
+    {
+      "case": 5,
+      "category": "운영",
+      "question": "지식 문서를 추가한 뒤 어떻게 다시 인덱싱하나요?",
+      "reference": "knowledge 디렉터리에 Markdown 또는 텍스트 파일을 넣고 POST /api/documents/reindex를 호출한다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "`knowledge` 디렉터리에 UTF-8 형식의 Markdown 또는 텍스트 파일을 넣고 `POST /api/documents/reindex`를 호출하면 서버를 다시 시작해도 문서를 자동으로 다시 읽습니다.[출처 1]",
+      "answer_token_f1": 0.5556,
+      "groundedness": 0.875,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1051.75,
+      "error": null
+    },
+    {
+      "case": 5,
+      "category": "운영",
+      "question": "지식 문서를 추가한 뒤 어떻게 다시 인덱싱하나요?",
+      "reference": "knowledge 디렉터리에 Markdown 또는 텍스트 파일을 넣고 POST /api/documents/reindex를 호출한다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "지식 문서를 추가한 뒤 `POST /api/documents/reindex`를 호출하여 다시 인덱싱할 수 있습니다. [출처 1, 출처 2]",
+      "answer_token_f1": 0.2069,
+      "groundedness": 0.5882,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2674.6,
+      "error": null
+    },
+    {
+      "case": 6,
+      "category": "RAG",
+      "question": "RAG 검색 근거는 어디에서 확인할 수 있나요?",
+      "reference": "API 응답의 sources 배열과 웹 화면의 검색 근거 영역에서 확인할 수 있다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "학습 로 확인입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.3333,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 23.54,
+      "error": null
+    },
+    {
+      "case": 6,
+      "category": "RAG",
+      "question": "RAG 검색 근거는 어디에서 확인할 수 있나요?",
+      "reference": "API 응답의 sources 배열과 웹 화면의 검색 근거 영역에서 확인할 수 있다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "`POST /api/query` 응답의 `sources` 배열에 파일명, 청크 ID, 검색 유사도, 검색된 원문이 포함되며, 웹 화면 오른쪽의 검색 근거 영역에서도 파일명과 유사도를 확인할 수 있습니다.[출처 1]",
+      "answer_token_f1": 0.4211,
+      "groundedness": 0.8846,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1171.83,
+      "error": null
+    },
+    {
+      "case": 6,
+      "category": "RAG",
+      "question": "RAG 검색 근거는 어디에서 확인할 수 있나요?",
+      "reference": "API 응답의 sources 배열과 웹 화면의 검색 근거 영역에서 확인할 수 있다.",
+      "expected_source": "rag_faq.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "RAG 검색 근거는 `POST /api/query` 응답의 `sources` 배열에서 파일명, 청크 ID, 검색 유사도, 검색된 원문으로 확인할 수 있습니다. 또한, 웹 화면 오른쪽의 검색 근거 영역에서도 파일명과 유사도를 확인할 수 있습니다. [출처 1]",
+      "answer_token_f1": 0.4,
+      "groundedness": 0.7857,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2554.89,
+      "error": null
+    },
+    {
+      "case": 7,
+      "category": "RAG",
+      "question": "RAG 검색기는 어떤 방식으로 관련 문서를 찾나요?",
+      "reference": "문서를 나눈 뒤 Gemini Embedding 벡터를 만들고 InMemoryVectorStore에서 질문과 유사한 청크를 찾는다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "수정확인입니다.서 수정과 검토입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 53.74,
+      "error": null
+    },
+    {
+      "case": 7,
+      "category": "RAG",
+      "question": "RAG 검색기는 어떤 방식으로 관련 문서를 찾나요?",
+      "reference": "문서를 나눈 뒤 Gemini Embedding 벡터를 만들고 InMemoryVectorStore에서 질문과 유사한 청크를 찾는다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "LangChain RAG는 문서를 `RecursiveCharacterTextSplitter`로 나누고 Gemini Embedding으로 벡터를 생성한 뒤 `InMemoryVectorStore`에서 질문과 가까운 청크를 검색합니다 [출처 2].",
+      "answer_token_f1": 0.3871,
+      "groundedness": 0.8421,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1009.97,
+      "error": null
+    },
+    {
+      "case": 7,
+      "category": "RAG",
+      "question": "RAG 검색기는 어떤 방식으로 관련 문서를 찾나요?",
+      "reference": "문서를 나눈 뒤 Gemini Embedding 벡터를 만들고 InMemoryVectorStore에서 질문과 유사한 청크를 찾는다.",
+      "expected_source": "chatbot_guide.md",
+      "retrieved_sources": [
+        "rag_faq.md",
+        "chatbot_guide.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "RAG 검색기는 문서를 `RecursiveCharacterTextSplitter`로 나누고 Gemini Embedding으로 벡터를 생성한 뒤 `InMemoryVectorStore`에서 질문과 가까운 청크를 검색하는 방식으로 관련 문서를 찾습니다. [출처 2]",
+      "answer_token_f1": 0.3529,
+      "groundedness": 0.6818,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1842.62,
+      "error": null
+    },
+    {
+      "case": 8,
+      "category": "자기 모델",
+      "question": "자기 모델은 어떤 작업을 수행하도록 만든 모델인가요?",
+      "reference": "작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델이다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "학습 로 비교합니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.3333,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 33.89,
+      "error": null
+    },
+    {
+      "case": 8,
+      "category": "자기 모델",
+      "question": "자기 모델은 어떤 작업을 수행하도록 만든 모델인가요?",
+      "reference": "작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델이다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "자기 모델은 사용자가 작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델이다 [출처 1].",
+      "answer_token_f1": 0.8148,
+      "groundedness": 0.9375,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1331.84,
+      "error": null
+    },
+    {
+      "case": 8,
+      "category": "자기 모델",
+      "question": "자기 모델은 어떤 작업을 수행하도록 만든 모델인가요?",
+      "reference": "작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델이다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "자기 모델은 사용자가 작성 중인 한국어 문장의 다음 단어와 이어질 문장을 생성하는 자동완성 모델입니다. [출처 1]",
+      "answer_token_f1": 0.7407,
+      "groundedness": 0.875,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1842.44,
+      "error": null
+    },
+    {
+      "case": 9,
+      "category": "자기 모델",
+      "question": "자기 모델의 Transformer 구조는 어떻게 구성되어 있나요?",
+      "reference": "문자 Embedding, causal mask를 적용한 3층 TransformerEncoder, 선형 출력층으로 구성되며 embedding dimension은 128이고 attention head는 4개다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "탐색입니다.는 로 오류 분하이미지 분하이퍼파라미터 탐색입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.0,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 67.86,
+      "error": null
+    },
+    {
+      "case": 9,
+      "category": "자기 모델",
+      "question": "자기 모델의 Transformer 구조는 어떻게 구성되어 있나요?",
+      "reference": "문자 Embedding, causal mask를 적용한 3층 TransformerEncoder, 선형 출력층으로 구성되며 embedding dimension은 128이고 attention head는 4개다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "자기 모델은 PyTorch의 `Embedding`, `TransformerEncoder`, `causal mask`, 선형 출력층으로 구성된 문자 단위 Transformer를 사용합니다 [출처 1].",
+      "answer_token_f1": 0.3871,
+      "groundedness": 0.875,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 850.49,
+      "error": null
+    },
+    {
+      "case": 9,
+      "category": "자기 모델",
+      "question": "자기 모델의 Transformer 구조는 어떻게 구성되어 있나요?",
+      "reference": "문자 Embedding, causal mask를 적용한 3층 TransformerEncoder, 선형 출력층으로 구성되며 embedding dimension은 128이고 attention head는 4개다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "자기 모델은 PyTorch의 `Embedding`, `TransformerEncoder`, causal mask, 선형 출력층으로 구성된 문자 단위 Transformer를 사용합니다. 모델 설정은 block size 128, embedding dimension 128, attention head 4개, Transformer layer 3개입니다. [출처 1]",
+      "answer_token_f1": 0.3256,
+      "groundedness": 0.8929,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1889.2,
+      "error": null
+    },
+    {
+      "case": 10,
+      "category": "학습",
+      "question": "자기 모델은 몇 개의 문장과 토큰으로 학습했나요?",
+      "reference": "자동완성 문장 2,698개와 토큰 74,037개로 학습했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "학습 있습 확인입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.3333,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 22.1,
+      "error": null
+    },
+    {
+      "case": 10,
+      "category": "학습",
+      "question": "자기 모델은 몇 개의 문장과 토큰으로 학습했나요?",
+      "reference": "자동완성 문장 2,698개와 토큰 74,037개로 학습했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "자기 모델은 2,698개의 학습 문장과 74,037개의 학습 토큰으로 학습했습니다 [출처 1].",
+      "answer_token_f1": 0.2,
+      "groundedness": 0.5,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 819.71,
+      "error": null
+    },
+    {
+      "case": 10,
+      "category": "학습",
+      "question": "자기 모델은 몇 개의 문장과 토큰으로 학습했나요?",
+      "reference": "자동완성 문장 2,698개와 토큰 74,037개로 학습했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "자기 모델은 2,698개의 학습 문장과 74,037개의 학습 토큰으로 학습했습니다. [출처 1]",
+      "answer_token_f1": 0.2,
+      "groundedness": 0.5,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1658.63,
+      "error": null
+    },
+    {
+      "case": 11,
+      "category": "학습",
+      "question": "자기 모델은 어떤 방식으로 다음 문자를 학습했나요?",
+      "reference": "현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "학습 살 수정리입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.3333,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 40.64,
+      "error": null
+    },
+    {
+      "case": 11,
+      "category": "학습",
+      "question": "자기 모델은 어떤 방식으로 다음 문자를 학습했나요?",
+      "reference": "현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "한 문장에서 현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화했습니다 [출처 1].",
+      "answer_token_f1": 0.8,
+      "groundedness": 0.8824,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 799.68,
+      "error": null
+    },
+    {
+      "case": 11,
+      "category": "학습",
+      "question": "자기 모델은 어떤 방식으로 다음 문자를 학습했나요?",
+      "reference": "현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화했다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "자기 모델은 한 문장에서 현재 문자까지를 입력으로 사용하고 바로 다음 문자를 정답으로 두어 cross entropy loss를 최소화하는 방식으로 다음 문자를 학습했습니다. [출처 1]",
+      "answer_token_f1": 0.7059,
+      "groundedness": 0.8095,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 1502.65,
+      "error": null
+    },
+    {
+      "case": 12,
+      "category": "한계",
+      "question": "자기 모델의 현재 한계와 앞으로의 개선 방향은 무엇인가요?",
+      "reference": "작은 말뭉치와 짧은 학습으로 긴 문맥과 질의응답이 약하므로 데이터를 확대하고 subword tokenizer와 추가 학습을 적용해야 한다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "자기 모델",
+      "model_id": "character-transformer",
+      "answer": "학습 노트북에서 결과 학습 정확인입니다.",
+      "answer_token_f1": 0.0,
+      "groundedness": 0.25,
+      "citation_present": false,
+      "retrieval_hit": true,
+      "latency_ms": 52.81,
+      "error": null
+    },
+    {
+      "case": 12,
+      "category": "한계",
+      "question": "자기 모델의 현재 한계와 앞으로의 개선 방향은 무엇인가요?",
+      "reference": "작은 말뭉치와 짧은 학습으로 긴 문맥과 질의응답이 약하므로 데이터를 확대하고 subword tokenizer와 추가 학습을 적용해야 한다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemma 4 E2B",
+      "model_id": "gemma4:e2b",
+      "answer": "학습 문장이 2,698개로 작고 1 epoch만 학습했기 때문에 긴 문맥 이해, 처음 보는 표현, 사실 기반 질의응답에는 적합하지 않습니다. 다음 단어 인덱스에 있는 문장은 안정적이지만 인덱스 밖의 입력에서는 어색한 문자 조합이 나올 수 있습니다. 이후에는 말뭉치를 확대하고 subword tokenizer를 도입한 뒤, 학습 epoch와 모델 크기를 검증 데이터 기준으로 조정해야 합니다. 질의응답은 자동완성 모델에 억지로 맡기지 않고 RAG 검색과 별도 LLM을 사용하는 구조가 적합합니다.[출처 2]",
+      "answer_token_f1": 0.075,
+      "groundedness": 0.9219,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2519.57,
+      "error": null
+    },
+    {
+      "case": 12,
+      "category": "한계",
+      "question": "자기 모델의 현재 한계와 앞으로의 개선 방향은 무엇인가요?",
+      "reference": "작은 말뭉치와 짧은 학습으로 긴 문맥과 질의응답이 약하므로 데이터를 확대하고 subword tokenizer와 추가 학습을 적용해야 한다.",
+      "expected_source": "model_card.md",
+      "retrieved_sources": [
+        "model_card.md",
+        "model_card.md"
+      ],
+      "model": "Gemini 2.5 Flash",
+      "model_id": "gemini-2.5-flash",
+      "answer": "자기 모델의 현재 한계는 학습 문장이 2,698개로 작고 1 epoch만 학습했기 때문에 긴 문맥 이해, 처음 보는 표현, 사실 기반 질의응답에는 적합하지 않다는 점입니다. 또한, 다음 단어 인덱스 밖의 입력에서는 어색한 문자 조합이 나올 수 있습니다. [출처 2]\n\n앞으로의 개선 방향은 말뭉치를 확대하고 subword tokenizer를 도입한 뒤, 학습 epoch와 모델 크기를 검증 데이터 기준으로 조정하는 것입니다. 질의응답 기능은 자동완성 모델에 맡기지 않고 RAG 검색과 별도 LLM을 사용하는 구조가 적합합니다. [출처 2]",
+      "answer_token_f1": 0.0714,
+      "groundedness": 0.7794,
+      "citation_present": true,
+      "retrieval_hit": true,
+      "latency_ms": 2422.95,
+      "error": null
+    }
+  ],
+  "self_model_demo": [
+    {
+      "prompt": "오늘 오전",
+      "completion": "오늘 오전 계획은 FastAPI 화면 확인입니다"
+    },
+    {
+      "prompt": "엄마",
+      "completion": "엄마 생각이 나서 따뜻한 문자를 보냈습니다"
+    },
+    {
+      "prompt": "주말에는",
+      "completion": "주말에는 가족과 맛있는 음식을 먹고 싶어요"
+    },
+    {
+      "prompt": "내일 오후에는",
+      "completion": "내일 오후에는 발표 자료를 정리할 계획입니다"
+    },
+    {
+      "prompt": "모델 학습 결과를",
+      "completion": "모델 학습 결과를 확인하고 수정합니다"
+    }
+  ]
+}
